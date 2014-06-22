@@ -1,5 +1,7 @@
 # AngularJS jQCloud
 
+[![Bower version](https://badge.fury.io/bo/angular-jqcloud.svg)](http://badge.fury.io/bo/angular-jqcloud)
+
 Simple AngularJS directive for [jQCloud](https://github.com/mistic100/jQCloud), a beautiful words cloud generator.
 
 ## Usage
