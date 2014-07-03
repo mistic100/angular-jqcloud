@@ -28,7 +28,7 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
       
       for (var i=0, l=jqcOptions.length; i<l; i++) {
         var opt = jqcOptions[i];
-        if ($attr[opt]!=undefined) {
+        if ($attr[opt] !== undefined) {
           options[opt] = $parse($attr[opt])();
         }
       }
