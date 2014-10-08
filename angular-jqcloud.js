@@ -37,7 +37,9 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
       
       $scope.$watchCollection('words', function() {
         $scope.$evalAsync(function() {
-          $elem.jQCloud('update', $scope.words);
+          var words = [];
+          $.extend(words,$scope.words);
+          $elem.jQCloud('update', words);
         });
       });
     
