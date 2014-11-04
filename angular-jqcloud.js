@@ -5,7 +5,7 @@
  * Licensed under MIT (http://opensource.org/licenses/MIT)
  */
 
-angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($parse) {
+angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', '$timeout', function($parse, $timeout) {
   // get existing options
   var defaults = jQuery.fn.jQCloud.defaults.get(),
       jqcOptions = [];
@@ -28,19 +28,18 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
       
       for (var i=0, l=jqcOptions.length; i<l; i++) {
         var opt = jqcOptions[i];
-        if ($attr[opt] !== undefined) {
+        if ($attr[opt]!=undefined) {
           options[opt] = $parse($attr[opt])();
         }
       }
       
       $elem.jQCloud($scope.words, options);
       
-      $scope.$watchCollection('words', function() {
-        $scope.$evalAsync(function() {
-          var words = [];
-          $.extend(words,$scope.words);
-          $elem.jQCloud('update', words);
-        });
+      $scope.$watch('words', function() {
+        if ($scope.words !== undefined)
+        $timeout(function() {
+          $elem.jQCloud('update', $scope.words);
+        }, 0);
       });
     
       $elem.bind('$destroy', function() {
