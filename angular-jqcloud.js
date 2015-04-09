@@ -33,18 +33,18 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
         }
       }
       
-      $elem.jQCloud($scope.words, options);
+      jQuery($elem).jQCloud($scope.words, options);
       
       $scope.$watchCollection('words', function() {
         $scope.$evalAsync(function() {
           var words = [];
           $.extend(words,$scope.words);
-          $elem.jQCloud('update', words);
+          jQuery($elem).jQCloud('update', words);
         });
       });
     
       $elem.bind('$destroy', function() {
-        $elem.jQCloud('destroy');
+        jQuery($elem).jQCloud('destroy');
       });
     }
   };
