@@ -4,13 +4,21 @@
   <meta charset="utf-8">
 
   <link rel="stylesheet" href="../bower_components/jqcloud2/dist/jqcloud.min.css">
+  <style type="text/css">
+  body > div {
+    border: 1px green solid;
+  }
+  </style>
 </head>
 
 <body ng-app="app" ng-controller="controller">
 
-<jqcloud words="words" width="500" height="350" colors="{{colors}}" delay="10" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>
+<jqcloud words="words" width="options.width" height="options.height" colors="{{colors}}" delay="10" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>
 
 <button ng-click="update()">Update</button>
+<label>Dimensions:</label>
+<input type="number" ng-model="options.width"/> x 
+<input type="number" ng-model="options.height"/>
 
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/jqcloud2/dist/jqcloud.min.js"></script>
@@ -23,6 +31,11 @@
   ]);
 
   app.controller('controller', function($scope) {
+    $scope.options = {
+      width: 500, 
+      height: 350
+    }
+
     $scope.words = [
       {text: "Lorem", weight: 13},
       {text: "Ipsum", weight: 10.5},
