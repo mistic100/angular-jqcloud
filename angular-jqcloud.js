@@ -21,7 +21,9 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
     template: '<div></div>',
     replace: true,
     scope: {
-      words: '=words'
+      words: '=',
+      width: '=',
+      height: '='
     },
     link: function($scope, $elem, $attr) {
       var options = {};
@@ -34,7 +36,14 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
         }
       }
 
-      jQuery($elem).jQCloud($scope.words, options);
+      // redraw the cloud when dimention changes
+      $scope.$watch( '[width,height]', function () {
+        options.width = $scope.width;
+        options.height = $scope.height;
+        $elem.jQCloud('destroy');
+        $elem.empty();
+        $elem.jQCloud($scope.words, options);
+      }, true);
 
       $scope.$watchCollection('words', function() {
         $scope.$evalAsync(function() {
