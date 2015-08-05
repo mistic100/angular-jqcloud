@@ -4,13 +4,22 @@
   <meta charset="utf-8">
 
   <link rel="stylesheet" href="../bower_components/jqcloud2/dist/jqcloud.min.css">
+  
+  <style>
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+    #cloud-dynamic { width: 80%; height: 400px; }
+  </style>
 </head>
 
 <body ng-app="app" ng-controller="controller">
 
+<button ng-click="update()">Update</button>
+
+<p>Fixed size cloud :</p>
 <jqcloud words="words" width="500" height="350" colors="{{colors}}" delay="10" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>
 
-<button ng-click="update()">Update</button>
+<p>Full width cloud :</p>
+<jqcloud words="words" id="cloud-dynamic" auto-resize="true" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>
 
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/jqcloud2/dist/jqcloud.min.js"></script>
