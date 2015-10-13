@@ -21,7 +21,8 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
     template: '<div></div>',
     replace: true,
     scope: {
-      words: '=words'
+      words: '=words',
+      afterCloudRender: '&'
     },
     link: function($scope, $elem, $attr) {
       var options = {};
@@ -32,6 +33,10 @@ angular.module('angular-jqcloud', []).directive('jqcloud', ['$parse', function($
         if (attr !== undefined) {
           options[opt] = $parse(attr)();
         }
+      }
+
+      if ($scope.afterCloudRender) {
+        options.afterCloudRender = $scope.afterCloudRender;
       }
 
       jQuery($elem).jQCloud($scope.words, options);
