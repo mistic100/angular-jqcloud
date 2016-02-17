@@ -1,0 +1,19 @@
+{
+  "name": "angular-jqcloud",
+  "version": "1.0.2",
+  "description": "AngularJS directive for jQCloud 2 plugin",
+  "main": "angular-jqcloud.js",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mistic100/angular-jqcloud"
+  },
+  "author": "Adrian Pansky <apansky@gmail.com> (localhost:8888)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apansky/angular-jqcloud/issues"
+  },
+  "homepage": "https://github.com/apansky/angular-jqcloud"
+}
