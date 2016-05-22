@@ -1,22 +1,29 @@
 {
   "name": "angular-jqcloud",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "homepage": "https://github.com/mistic100/angular-jqcloud",
   "description": "AngularJS directive for jQCloud 2 plugin",
   "main": "angular-jqcloud.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mistic100/angular-jqcloud"
-  },
   "author": {
     "name": "Damien \"Mistic\" Sorel",
     "homepage": "http://www.strangeplanet.fr"
   },
-   "dependencies": {
+  "dependencies": {
     "angular": "1.x",
     "jqcloud2": "2.x"
   },
+  "keywords": [
+    "angularjs",
+    "cloud",
+    "jquery",
+    "keyword",
+    "tag"
+  ],
   "license": "MIT",
-  "homepage": "https://github.com/mistic100/angular-jqcloud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mistic100/angular-jqcloud"
+  },
   "bugs": {
     "url": "https://github.com/mistic100/angular-jqcloud/issues"
   }

@@ -1,7 +1,7 @@
 /*!
- * Angular jQCloud 1.0.2
+ * Angular jQCloud 1.0.3
  * For jQCloud 2 (https://github.com/mistic100/jQCloud)
- * Copyright 2014 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
+ * Copyright 2014-2016 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (http://opensource.org/licenses/MIT)
  */
 
